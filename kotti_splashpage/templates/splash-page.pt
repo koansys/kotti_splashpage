@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      metal:use-macro="api.macro('kotti:templates/view/master.pt')">
+
+  <article metal:fill-slot="content" class="splash-page-view content">
+    <div class="row">
+        <div class="span7">
+            <img src="http://placekitten.com/500/300" />
+        </div>
+        <div class="span5">
+        <h1>THIS IS A ${context.title} SPLASH PAGE</h1>
+        <p class="description">
+          ${context.description}
+        </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="body clear" tal:content="structure context.body" />
+    </div>
+  </article>
+
+</html>
