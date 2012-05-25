@@ -10,6 +10,14 @@ requires = [
     'kms',
     ]
 
+tests_require =  [
+  'mock',
+  'nose',
+  'WebTest',
+  'wsgi_intercept',
+  'zope.testbrowser'
+]
+
 setup(name='kotti_splashpage',
       version='0.1.0',
       description='kotti_splashpage',
@@ -28,7 +36,7 @@ setup(name='kotti_splashpage',
       include_package_data=True,
       zip_safe=False,
       install_requires=requires,
-      tests_require=requires,
+      tests_require=requires + tests_require,
       test_suite="kotti_splashpage",
       entry_points="""\
       [paste.app_factory]
