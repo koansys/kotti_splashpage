@@ -1,4 +1,5 @@
 from kotti.testing import FunctionalTestBase
+from kotti.testing import UnitTestBase
 
 from kotti.testing import (
     tearDown,
@@ -48,3 +49,30 @@ class TestSplashFunctional(FunctionalTestBase):
         result = self.test_app.get('/')
         assert result.status == '200 OK'
         assert 'SPLASH PAGE' in result.body
+
+
+class TestSplashPage(UnitTestBase):
+
+    def test_populate(self):
+        from kotti.resources import get_root
+        from kotti_splashpage import populate
+
+        root = get_root()
+        self.assertFalse(root.default_view)
+        populate()
+        self.assertEquals(root.default_view, 'splash-page')
+
+
+class TestIncludeMe(UnitTestBase):
+
+    def test_includeme(self):
+        from pyramid.testing import setUp
+        from kotti_splashpage import includeme
+
+        config = setUp()
+        includeme(config)
+        views = config.introspector.get_category('views')[0]
+        self.assertEquals(views['introspectable']['name'], 'splash-page')
+        self.assertEquals(
+            views['related'][0]['name'],
+            'kotti_splashpage:templates/splash-page.pt')
