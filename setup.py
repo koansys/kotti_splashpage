@@ -10,7 +10,7 @@ requires = [
     'kms',
     ]
 
-tests_require =  [
+tests_require = [
   'mock',
   'nose',
   'WebTest',
@@ -19,8 +19,12 @@ tests_require =  [
 ]
 
 setup(name='kotti_splashpage',
-      version='0.1.0',
-      description='kotti_splashpage',
+      version='0.2.0',
+      description="""\
+      kotti_splashpage is a kotti package to setup the home page as a splash
+      page. It allows you to simply set a template in your application
+      deployment configuration and have a splash page.
+      """,
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
         "Programming Language :: Python",
@@ -28,9 +32,9 @@ setup(name='kotti_splashpage',
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
         ],
-      author='',
-      author_email='',
-      url='',
+      author='Koansys, LLC and contributors',
+      author_email='info@koansys.com',
+      url='http://github.com/koansys/kotti_splashpage',
       keywords='web pyramid pylons',
       packages=find_packages(),
       include_package_data=True,
@@ -39,7 +43,5 @@ setup(name='kotti_splashpage',
       tests_require=requires + tests_require,
       test_suite="kotti_splashpage",
       entry_points="""\
-      [paste.app_factory]
-      main = kotti_splashpage:main
-      """,
+      """
       )

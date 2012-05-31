@@ -1,10 +1,16 @@
 Changes
 =======
 
-next release
-------------
+0.2.0
+-----
 
--
+- update `kotti.includes` -> `pyramid.includes`
+- prep for actual release on pypi
+- add populate in includeme
+- get template from ini: `kotti_splashpage.renderer`
+- boilerplate
+- populate
+- include me
 
 0.1.0
 -----
