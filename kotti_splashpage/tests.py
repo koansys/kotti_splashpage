@@ -48,7 +48,7 @@ class TestSplashFunctional(FunctionalTestBase):
     def test_it(self):
         result = self.test_app.get('/')
         assert result.status == '200 OK'
-        assert 'SPLASH PAGE' in result.body
+        assert 'kotti_splashpage.renderer' in result.body
 
 
 class TestSplashPage(UnitTestBase):

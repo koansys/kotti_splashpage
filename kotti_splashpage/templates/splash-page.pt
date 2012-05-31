@@ -8,14 +8,23 @@
             <img src="http://placekitten.com/500/300" />
         </div>
         <div class="span5">
-        <h1>THIS IS A ${context.title} SPLASH PAGE</h1>
+        <h1>${context.title} Splash Page</h1>
         <p class="description">
-          ${context.description}
+        <p>
+          Congratulations, you have succesfully installed <a href="http://github.com/koansys/kotti_splashpage"><code>kotti_splashpage</code></a>.
+          Now you probably want to set a renderer. You can do so by adding something like the following to your application deployment configuration (ini file):
+        </p>
+        <p>
+          <pre>
+kotti_splashpage.renderer =
+    mypackage:templates/splash-page.pt
+          </pre>
+        </p>
         </p>
         </div>
     </div>
     <div class="row">
-        <div class="body clear" tal:content="structure context.body" />
+
     </div>
   </article>
 
